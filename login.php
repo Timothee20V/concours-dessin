@@ -1,3 +1,25 @@
+<?php
+// Vérifiez si le formulaire a été soumis
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    // Vérifiez les identifiants
+    if ($username == "user" && $password == "userpass") {
+        // Démarrez la session et définissez la variable de session
+        session_start();
+        $_SESSION["UserLogin"] = "user";
+
+        // Redirigez vers la page d'accueil
+        header("Location: accueil.html");
+        exit;
+    } else {
+        // Les identifiants sont incorrects
+        $error = "Invalid username or password";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,10 +78,9 @@
         </div>
 
         <h2>Connexion</h2>
-        <form action="login.php" method="post">
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <label for="username">Nom d'utilisateur:</label>
             <input type="text" id="username" name="username" required><br><br>
-
 
             <label for="password">Mot de passe:</label>
             <input type="password" id="password" name="password" required><br><br>
@@ -70,8 +91,8 @@
 
             <button type="submit">Connexion</button>
             <p class="footer-text">Vous avez oublié votre nom d'utilisateur et/ou votre mot de passe ?</p>
+        </form>
     </div>
-    </form>
 </div>
 
 </body>
