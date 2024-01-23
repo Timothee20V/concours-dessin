@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["UserLogin"] = "user";
 
         // Redirigez vers la page d'accueil
-        header("Location: index.html");
+        header("Location: accueil.html");
         exit;
     } else {
         // Les identifiants sont incorrects
