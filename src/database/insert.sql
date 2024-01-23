@@ -1,15 +1,15 @@
 INSERT INTO Club (numClub, nomClub, adresseClub, numTelephone, nombreAdherents, ville, departement, region)
 VALUES
-  (1, 'Club Artiste', '123 Art Street', '123-456-7890', 50, 'Saumur', '49', 'Pays de la Loire'),
-  (2, 'Palette Club', '456 Paint Avenue', '987-654-3210', 30, 'Macon', '71', 'Bourgogne-Franche-Compte'),
-  (3, 'Sculpture Society', '789 Clay Lane', '111-222-3333', 40, 'Chalon-sur-Saone ', '71', 'Bourgogne-Franche-Compte'),
-  (4, 'Artisans du Pinceau', '789 Palette St', '0123456789', 120, 'Dijon', '21', 'Bourgogne-Franche-Compte'),
-  (5, 'Sculpteurs Talentueux', '101 Marble Ave', '0234567890', 90, 'La Flèche', '72', 'Pays de la Loire'),
-  (6, 'Dessinateurs Créatifs', '202 Sketch Rd', '0345678901', 80, 'Beaune', '21', 'Bourgogne-Franche-Compte'),
-  (7, 'Photographes Artistiques', '303 Snapshot St', '0456789012', 110, 'Le Mans', '72', 'Pays de la Loire'),
-  (8, 'Art Moderne Expressif', '404 Canvas Ave', '0567890123', 95, 'Montceau-les-Mines', '71', 'Bourgogne-Franche-Compte'),
-  (9, 'Couleurs Vibrantes', '505 Hue Rd', '0678901234', 75, 'Cholet', '49', 'Pays de la Loire'),
-  (10, 'Créateurs Multidisciplinaires', '606 Imagination St', '0789012345', 100, 'Angers', '49', 'Pays de la Loire');
+  (1, 'CreaCroquis Club', '12 Art Street', '0123456789', 14, 'Saumur', '49', 'Pays de la Loire'),
+  (2, 'ArtEbauche Collective', '23 Paint Avenue', '0234567890', 19, 'Macon', '71', 'Bourgogne-Franche-Compte'),
+  (3, 'Esquisse Express Club', '34 Clay Lane', '0345678901', 16, 'Chalon-sur-Saone ', '71', 'Bourgogne-Franche-Compte'),
+  (4, 'Artisans du Pinceau', '45 Palette St', '0456789012', 12, 'Dijon', '21', 'Bourgogne-Franche-Compte'),
+  (5, 'Palette Creative Club', '56 Marble Ave', '0567890123', 15, 'La Flèche', '72', 'Pays de la Loire'),
+  (6, 'Dessinateurs Créatifs', '67 Sketch Rd', '0678901234', 18, 'Beaune', '21', 'Bourgogne-Franche-Compte'),
+  (7, 'Fusion Créative', '78 Snapshot St', '0789012345', 17, 'Le Mans', '72', 'Pays de la Loire'),
+  (8, 'ArtElites Dessin Club', '89 Canvas Ave', '0890123456', 11, 'Montceau-les-Mines', '71', 'Bourgogne-Franche-Compte'),
+  (9, 'Couleurs Vibrantes', '90 Hue Rd', '0901234567', 15, 'Cholet', '49', 'Pays de la Loire'),
+  (10, 'Studio Esquisse', '01 Imagination St', '0012345678', 13, 'Angers', '49', 'Pays de la Loire');
 
 INSERT INTO Concours (numConcours, theme, dateDebut, dateFin, etat)
 VALUES
