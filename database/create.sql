@@ -27,7 +27,8 @@ CREATE TABLE Club
     nombreAdherents INT,
     ville           VARCHAR(100),
     departement     VARCHAR(100),
-    region          VARCHAR(100)
+    region          VARCHAR(100),
+    FOREIGN KEY (numPresident) REFERENCES President (numPresident)
 );
 
 -- Table Concours
