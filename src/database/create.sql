@@ -21,14 +21,14 @@ CREATE TABLE Club
 (
     numClub         INT PRIMARY KEY,
     nomClub         VARCHAR(255),
-    numPresident    INT,
+    numDirecteur    INT,
     adresseClub     VARCHAR(255),
     numTelephone    VARCHAR(20),
     nombreAdherents INT,
     ville           VARCHAR(100),
     departement     VARCHAR(100),
     region          VARCHAR(100),
-    FOREIGN KEY (numPresident) REFERENCES President (numPresident)
+    FOREIGN KEY (numDirecteur) REFERENCES Directeur (numDirecteur)
 );
 
 -- Table Concours
@@ -64,6 +64,8 @@ CREATE TABLE Directeur
     FOREIGN KEY (numClub) REFERENCES Club (numClub),
     FOREIGN KEY (numDirecteur) REFERENCES Utilisateur (numUtilisateur)
 );
+
+ALTER TABLE Club ADD FOREIGN KEY (numDirecteur) REFERENCES Directeur (numDirecteur);
 
 -- Table Administrateur
 CREATE TABLE Administrateur

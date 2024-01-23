@@ -24,7 +24,7 @@ VALUES
 
 INSERT INTO Utilisateur (numUtilisateur, nom, prenom, adresseUtilisateur, login, motDePasse, dateAdhesion, numClub)
 VALUES
-  (1, 'Doe', 'John', '123 Main St', 'john_doe', 'motdepasse1', '2013-01-01', 1),
+  (1, 'Doe', 'John', '123 Main St', 'john_doe', 'motdepasse1', '2012-01-01', 1),
   (2, 'Smith', 'Jane', '456 Oak St', 'jane_smith', 'motdepasse2', '2013-01-15', 2),
   (3, 'Johnson', 'Bob', '789 Pine St', 'bob_johnson', 'motdepasse3', '2013-02-01', 1),
   (4, 'Taylor', 'Alice', '101 Maple St', 'alice_taylor', 'motdepasse4', '2013-02-15', 3),
@@ -177,15 +177,20 @@ VALUES
 
 INSERT INTO Directeur (numDirecteur, dateDebut, numClub, numUtilisateur)
 VALUES
-  (1, '2023-01-01', 1, 1),
-  (2, '2023-02-01', 2, 2),
-  (3, '2023-03-01', 3, 3);
+  (1, '2023-01-01', 1, 42),
+  (2, '2023-02-01', 2, 87),
+  (3, '2023-03-01', 3, 19)
+  (4, '2023-01-01', 4, 105),
+  (5, '2023-02-01', 5, 63),
+  (6, '2023-03-01', 6, 128)
+  (7, '2023-01-01', 7, 5),
+  (8, '2023-02-01', 8, 76),
+  (9, '2023-03-01', 9, 94)
+  (10, '2023-03-01', 10, 114);
 
 INSERT INTO Administrateur (numAdministrateur, dateDebut, numUtilisateur)
 VALUES
-  (1, '2023-01-01', 1),
-  (2, '2023-02-01', 2),
-  (3, '2023-03-01', 3);
+  (1, '2012-01-01', 1);
 
 INSERT INTO Evaluateur (numEvaluateur, specialite, numUtilisateur)
 VALUES
@@ -203,7 +208,12 @@ INSERT INTO President (numPresident, prime, numUtilisateur, numConcours)
 VALUES
   (1, 1000, 1, 1),
   (2, 800, 2, 2),
-  (3, 1200, 3, 3);
+  (3, 1200, 3, 3)
+  (1, 1000, 1, 1),
+  (2, 800, 2, 2),
+  (3, 1200, 3, 3)
+  (1, 1000, 1, 1),
+  (2, 800, 2, 2);
 
 INSERT INTO Dessin (numDessin, commentaire, classement, dateRemise, leDessin, numCompetiteur, numConcours)
 VALUES
@@ -211,7 +221,7 @@ VALUES
   (2, 'Très creatif', 2, '2023-02-01', 'URL_IMAGE_2', 2, 2),
   (3, 'Belle composition', 3, '2023-03-01', 'URL_IMAGE_3', 3, 3);
 
-INSERT INTO Jury (numConcours, numCompetiteur)
+INSERT INTO Jury (numConcours, numEvaluateur)
 VALUES
   (1, 1),
   (1, 2),
@@ -220,7 +230,7 @@ VALUES
   (3, 1),
   (3, 3);
 
-INSERT INTO ParticipationEvaluateur (numConcours, numEvaluateur)
+INSERT INTO ParticipationCompetiteur (numConcours, numCompetiteur
 VALUES
   (1, 1),
   (1, 2),
