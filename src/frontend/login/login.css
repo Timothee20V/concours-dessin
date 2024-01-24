@@ -20,6 +20,15 @@ img {
     padding: 20px;
     text-align: center;
 }
+/* gap between */
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
 .footer-text{
     color: #5a4e9d
 }

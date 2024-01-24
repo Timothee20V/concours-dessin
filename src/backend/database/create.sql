@@ -27,8 +27,7 @@ CREATE TABLE Club
     nombreAdherents INT,
     ville           VARCHAR(100),
     departement     VARCHAR(100),
-    region          VARCHAR(100),
-    FOREIGN KEY (numPresident) REFERENCES President (numPresident)
+    region          VARCHAR(100)
 );
 
 -- Table Concours
@@ -98,6 +97,8 @@ CREATE TABLE President
     FOREIGN KEY (numPresident) REFERENCES Utilisateur (numUtilisateur),
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours)
 );
+
+ALTER TABLE Club ADD FOREIGN KEY (numPresident) REFERENCES President (numPresident);
 
 -- Table Dessin
 CREATE TABLE Dessin
