@@ -14,13 +14,20 @@ document.addEventListener('DOMContentLoaded', function() {
             password
         };
 
-        console.log(data);
-
         Api.request('/backend/api/login.php', 'post', data)
             .then(response => {
                 if (response.status === 'success') {
-                    console.log('Success - redirecting to dashboard');
+                    const userData = {
+                        userId: response.id,
+                        login: response.login,
+                        name: response.name,
+                        surname: response.surname,
+                        userRole: response.role
+                    };
+                    localStorage.setItem('userData', JSON.stringify(userData));
+
                     window.location.href = '../accueil/accueil.html';
+                    alert('Vous êtes connecté en tant que : ' + response.role);
                 } else {
                     console.log('Error - invalid credentials');
                     alert('Nom d\'utilisateur ou mot de passe incorrect');

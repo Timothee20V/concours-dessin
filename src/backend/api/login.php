@@ -2,6 +2,7 @@
 
 session_start();
 require_once "database.php";
+require_once "role.php";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
@@ -31,7 +32,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['UserLogin'] = $username;
             http_response_code(200);
             error_log('Good');
-            echo json_encode(array('status' => 'success', 'message' => 'Connexion réussie'));
+            error_log('Role : ' . getRole($user['numUtilisateur'], $connexion));
+            echo json_encode(array(
+                'status' => 'success',
+                'id' => $user['numUtilisateur'],
+                'login' => $user['login'],
+                'name' => $user['nom'],
+                'surname' => $user['prenom'],
+                'role' => getRole($user['numUtilisateur'], $connexion)
+            ));
         } else {
             http_response_code(200);
             error_log('Bad');
@@ -42,6 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         error_log('Bad');
         echo json_encode(array('status' => 'error', 'message' => 'Erreur, aucun identifiant ne correspond à ces informations.'));
     }
+
     $stmt->close();
     mysqli_close($connexion);
     exit;
