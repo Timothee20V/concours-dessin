@@ -1,2 +1,6 @@
 # Default ignored files
 /.idea
+
+vm-infra-reseau_key.pem
+
+update.sh

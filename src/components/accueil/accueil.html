@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="accueil.css">
+    <link rel="stylesheet" href="../formatPage/navbar/navbar.css">
+    <link rel="stylesheet" href="../formatPage/footer/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../formatPage/loadComponents.js"></script>
+</head>
+<body>
+
+<div id="navbar"> </div>
+
+<div class="container">
+    <header>
+        <h1>Bienvenue sur notre site</h1>
+        <p>Ceci est la page d'accueil de notre site.</p>
+    </header>
+    <main>
+        <h2>Contenu de la page</h2>
+        <p>Voici le contenu principal de notre page d'accueil.</p>
+        <button onclick="AdminchangePage()">Admin</button>
+        <button onclick="EvaluateurchangePage()">Evaluateur</button>
+        <button onclick="CompetiteurchangePage()">Competiteur</button>
+    </main>
+</div>
+
+<div id="footer"> </div>
+
+</body>
+</html>
+
+<script>
+    function AdminchangePage() {
+        window.location.href = "../administrateur/administration.php";
+    }
+
+    function EvaluateurchangePage() {
+        window.location.href = "../evaluateur/evaluateur.php";
+    }
+
+    function CompetiteurchangePage() {
+        window.location.href = "../competiteur/competiteur.php";
+    }
+</script>

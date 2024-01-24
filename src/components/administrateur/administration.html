@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="administration.css">
+    <link rel="stylesheet" href="../formatPage/navbar/navbar.css">
+    <link rel="stylesheet" href="../formatPage/footer/footer.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="../formatPage/loadComponents.js"></script>
+</head>
+<body>
+
+<div id="navbar"> </div>
+
+<div class="container">
+    <header>
+        <h1>Administration</h1>
+    </header>
+
+    <h2>Créer un nouveau concours</h2>
+    <form id="new-contest-form">
+        <form id="new-contest-form" method="POST" action="create_contest.php">
+            <label for="contest-name">Nom du concours:</label><br>
+            <input type="text" id="contest-name" name="contest-name" required><br>
+            <label for="start-date">Date de début:</label><br>
+            <input type="date" id="start-date" name="start-date" required><br>
+            <label for="end-date">Date de fin:</label><br>
+            <input type="date" id="end-date" name="end-date" required><br>
+            <input type="submit" value="Créer un concours">
+        </form>
+    </form>
+
+    <h2>Ajouter un nouveau compétiteur</h2>
+    <form id="new-competitor-form" method="POST" action="add_competitor.php">
+        <label for="competitor-name">Nom du compétiteur:</label><br>
+        <input type="text" id="competitor-name" name="competitor-name" required><br>
+        <input type="submit" value="Ajouter un compétiteur">
+    </form>
+
+    <h2>Ajouter un nouvel évaluateur</h2>
+    <form id="new-evaluator-form" method="POST" action="add_evaluator.php">
+        <label for="evaluator-name">Nom de l'évaluateur:</label><br>
+        <input type="text" id="evaluator-name" name="evaluator-name" required><br>
+        <input type="submit" value="Ajouter un évaluateur">
+    </form>
+
+    <h2>Assigner un jury à chaque dessin</h2>
+    <form id="assign-jury-form" method="POST" action="assign_jury.php">
+        <label for="drawing-id">ID du dessin:</label><br>
+        <input type="text" id="drawing-id" name="drawing-id" required><br>
+        <label for="jury-id">ID du jury:</label><br>
+        <input type="text" id="jury-id" name="jury-id" required><br>
+        <input type="submit" value="Assigner un jury">
+    </form>
+</div>
+
+<div id="footer"> </div>
+
+</body>
+</html>
