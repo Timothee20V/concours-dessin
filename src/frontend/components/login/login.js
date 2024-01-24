@@ -1,4 +1,4 @@
-import Api from '../service/api.js';
+import Api from '../../service/api.js';
 
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.querySelector('form');

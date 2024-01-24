@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Accueil</title>
-    <link rel="stylesheet" href="competition.php">
     <link rel="stylesheet" href="../formatPage/navbar/navbar.css">
     <link rel="stylesheet" href="../formatPage/footer/footer.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -19,14 +18,14 @@
     </header>
     <main>
         <h2>Inscription à un concours</h2>
-        <form id="contest-registration-form" method="POST" action="register_contest.php">
+        <form id="contest-registration-form" method="POST">
             <label for="contest-name">Nom du concours:</label><br>
             <input type="text" id="contest-name" name="contest-name" required><br>
             <input type="submit" value="S'inscrire au concours">
         </form>
 
         <h2>Dépot dessins</h2>
-        <form id="drawing-submission-form" method="POST" action="submit_drawing.php">
+        <form id="drawing-submission-form" method="POST">
             <label for="drawing-name">Nom du dessin:</label><br>
             <input type="text" id="drawing-name" name="drawing-name" required><br>
             <label for="drawing-file">Fichier du dessin:</label><br>
