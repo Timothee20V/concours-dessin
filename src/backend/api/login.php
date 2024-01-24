@@ -42,9 +42,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         error_log('Bad');
         echo json_encode(array('status' => 'error', 'message' => 'Erreur, aucun identifiant ne correspond à ces informations.'));
     }
-
-
     $stmt->close();
+    mysqli_close($connexion);
     exit;
 }
 ?>

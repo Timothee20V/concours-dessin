@@ -1,4 +1,4 @@
 $(function(){
-    $("#navbar").load("../formatPage/navbar/navbar.html");
-    $("#footer").load("../formatPage/footer/footer.html");
+    $("#navbar").load("/frontend/components/formatPage/navbar/navbar.html");
+    $("#footer").load("/frontend/components/formatPage/footer/footer.html");
 });
