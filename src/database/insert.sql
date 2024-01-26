@@ -433,7 +433,6 @@ VALUES
   (148, '2017-03-15', 132),
   (150, '2017-04-15', 133);
 
-
 INSERT INTO President (numPresident, prime, numConcours, numUtilisateur)
 VALUES
   (1, 1000, 1, 23),
@@ -1032,8 +1031,6 @@ VALUES
   (8,124),
   (8,125),
   (8,128);
-
-
 
 INSERT INTO ParticipationClub (numConcours, numClub)
 VALUES
