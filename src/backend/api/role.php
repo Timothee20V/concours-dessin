@@ -4,16 +4,18 @@ function getRole($userID, $connexion) {
     $queryRole = "SELECT U.numUtilisateur,
     CASE
         WHEN E.numEvaluateur IS NOT NULL THEN 'Evaluateur'
+        WHEN A.numAdministrateur IS NOT NULL THEN 'Administrateur'
+        WHEN C.numCompetiteur IS NOT NULL THEN 'Competiteur'
         WHEN D.numDirecteur IS NOT NULL THEN 'Directeur'
         WHEN P.numPresident IS NOT NULL THEN 'President'
-        WHEN C.numCompetiteur IS NOT NULL THEN 'Competiteur'
         ELSE 'Aucun role'
     END AS Role
     FROM Utilisateur U
     LEFT JOIN Evaluateur E ON U.numUtilisateur = E.numEvaluateur
+    LEFT JOIN Administrateur A ON U.numUtilisateur = A.numAdministrateur
+    LEFT JOIN Competiteur C ON U.numUtilisateur = C.numCompetiteur
     LEFT JOIN Directeur D ON U.numUtilisateur = D.numDirecteur
     LEFT JOIN President P ON U.numUtilisateur = P.numPresident
-    LEFT JOIN Competiteur C ON U.numUtilisateur = C.numCompetiteur
     WHERE U.numUtilisateur = ?;";
 
     $stmt = $connexion->prepare("$queryRole");

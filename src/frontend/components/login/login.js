@@ -22,18 +22,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         login: response.login,
                         name: response.name,
                         surname: response.surname,
-                        userRole: response.role
+                        role: response.role
                     };
+                    localStorage.clear();
                     localStorage.setItem('userData', JSON.stringify(userData));
 
-                    window.location.href = '../accueil/accueil.html';
+                    window.location.href = '../accueil';
                     alert('Vous êtes connecté en tant que : ' + response.role);
                 } else {
-                    console.log('Error - invalid credentials');
                     alert('Nom d\'utilisateur ou mot de passe incorrect');
                 }
             })
-            .catch(error => {
+            .catch(() => {
                     console.error('Une erreur s\'est produite');
                 }
             );
