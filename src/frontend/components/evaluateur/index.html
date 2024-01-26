@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Accueil</title>
+    <link rel="stylesheet" href="evaluation.css">
+    <script src="auth.js"></script>
+    <script src="../navbar/customNavbar.js" type="text/javascript" defer></script>
+    <script src="../footer/customFooter.js" type="text/javascript" defer></script>
+</head>
+<body>
+
+<custom-navbar></custom-navbar>
+
+<div class="container">
+    <header>
+        <h1>Evaluation</h1>
+    </header>
+    <main>
+        <h2>Dessins attribués pour évaluation</h2>
+        <table id="assigned-drawings-table">
+            <div class="assign-drawing">
+                <div>
+                    <div>
+                        Nom du dessin
+                    </div>
+                    <div class="img-drawing">
+                        <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/QvWuQU1tjDc?autoplay=1&mute=0">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div>
+                    <form class="menu-drawing" method="POST">
+
+                        <div>
+                            <input type="number" id="rating" name="rating" min="0" max="20" required>
+                            <input type="hidden" id="drawing-id" name="drawing-id" value="id_du_dessin">
+                            <input type="submit" value="Noter">
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </table>
+
+        <h2>Résultats du concours</h2>
+
+        <div id="results-table"></div>
+
+    </main>
+</div>
+
+<custom-footer></custom-footer>
+
+</body>
+</html>
