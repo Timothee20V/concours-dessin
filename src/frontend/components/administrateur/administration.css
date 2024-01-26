@@ -7,7 +7,7 @@ body {
 }
 .container {
     width: 80vw;
-    margin: auto;
+    margin: 0 auto auto;
 }
 header {
     background: #f0f0f0;
