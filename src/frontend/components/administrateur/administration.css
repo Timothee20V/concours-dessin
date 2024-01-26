@@ -14,3 +14,63 @@ header {
     padding: 20px;
     text-align: center;
 }
+
+.new-concours {
+    width: 40%;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.menu-concours {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-competitor {
+    width: 37%;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.menu-competitor {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.new-evaluator {
+    width: 37%;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.menu-evaluator {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assign-jury {
+    width: 34%;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.menu-jury {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

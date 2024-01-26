@@ -7,10 +7,55 @@ body {
 }
 .container {
     width: 80vw;
+    height: 1200px;
     margin: auto;
 }
 header {
     background: #f0f0f0;
     padding: 20px;
     text-align: center;
+}
+
+
+.contest-registration-form {
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.drawing-submission-form {
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.assign-drawing {
+    width: 34%;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    background: #f0f0f0;
+    box-shadow: 0 0 10px #f0f0f0;
+}
+
+.img-drawing {
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.menu-drawing {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

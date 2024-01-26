@@ -17,24 +17,59 @@
     </header>
     <main>
         <h2>Inscription à un concours</h2>
-        <form id="contest-registration-form" method="POST">
-            <label for="contest-name">Nom du concours:</label><br>
-            <input type="text" id="contest-name" name="contest-name" required><br>
-            <input type="submit" value="S'inscrire au concours">
+        <form class="contest-registration-form" method="POST">
+            <div>
+                <label for="contest-name">Nom du concours:</label><br>
+                <input type="text" id="contest-name" name="contest-name" required><br>
+            </div>
+            <div>
+                <input type="submit" value="S'inscrire au concours">
+            </div>
         </form>
 
         <h2>Dépot dessins</h2>
-        <form id="drawing-submission-form" method="POST">
-            <label for="drawing-name">Nom du dessin:</label><br>
-            <input type="text" id="drawing-name" name="drawing-name" required><br>
-            <label for="drawing-file">Fichier du dessin:</label><br>
-            <input type="file" id="drawing-file" name="drawing-file" required><br>
-            <input type="submit" value="Soumettre le dessin">
+        <form class="drawing-submission-form" method="POST">
+            <div>
+                <label for="drawing-name">Nom du dessin:</label><br>
+                <input type="text" id="drawing-name" name="drawing-name" required><br>
+            </div>
+            <div>
+                <label for="drawing-file">Fichier du dessin:</label><br>
+                <input type="file" id="drawing-file" name="drawing-file" required><br>
+            </div>
+            <div>
+                <input type="submit" value="Soumettre le dessin">
+            </div>
         </form>
 
         <h2>Affichage notes des dessins</h2>
+        <table id="assigned-drawings-table">
+            <div class="assign-drawing">
+                <div>
+                    <div>
+                        Nom du dessin
+                    </div>
+                    <div class="img-drawing">
+                        <iframe width="420" height="315"
+                                src="https://www.youtube.com/embed/QvWuQU1tjDc?autoplay=1&mute=0">
+                        </iframe>
+                    </div>
+                </div>
 
+                <div>
+                    <form class="menu-drawing" method="POST">
+
+                        <div>
+                            Note du dessin :
+                        </div>
+
+                    </form>
+                </div>
+
+        </div>
+        </table>
         <h2>Résultats du concours</h2>
+        <div id="results-table"></div>
 
     </main>
 </div>

@@ -18,38 +18,99 @@
     </header>
 
     <h2>Créer un nouveau concours</h2>
-    <form id="new-contest-form" method="POST">
-        <label for="contest-name">Nom du concours:</label><br>
-        <input type="text" id="contest-name" name="contest-name" required><br>
-        <label for="start-date">Date de début:</label><br>
-        <input type="date" id="start-date" name="start-date" required><br>
-        <label for="end-date">Date de fin:</label><br>
-        <input type="date" id="end-date" name="end-date" required><br>
-        <input type="submit" value="Créer un concours">
-    </form>
+
+    <div class="new-concours">
+        <form class="menu-concours" method="POST">
+
+            <div>
+                <label for="contest-name">Nom du concours:</label><br>
+                <input type="text" id="contest-name" name="contest-name" required><br>
+            </div>
+
+            <div>
+                <label for="start-date">Date de début:</label><br>
+                <input type="date" id="start-date" name="start-date" required><br>
+            </div>
+
+            <div>
+                <label for="end-date">Date de fin:</label><br>
+                <input type="date" id="end-date" name="end-date" required><br>
+            </div>
+
+            <input type="submit" value="Créer un concours">
+
+        </form>
+
+    </div>
 
     <h2>Ajouter un nouveau compétiteur</h2>
-    <form id="new-competitor-form" method="POST">
-        <label for="competitor-name">Nom du compétiteur:</label><br>
-        <input type="text" id="competitor-name" name="competitor-name" required><br>
-        <input type="submit" value="Ajouter un compétiteur">
-    </form>
+
+    <div class="new-competitor">
+        <form class="menu-competitor" method="POST">
+
+            <div>
+                <label for="competitor-name">Nom du compétiteur:</label><br>
+                <input type="text" id="competitor-name" name="competitor-name" required><br>
+            </div>
+
+            <div>
+                <label for="competitor-prenom">Prénom du compétiteur:</label><br>
+                <input type="text" id="competitor-prenom" name="competitor-prenom" required><br>
+            </div>
+
+            <div>
+                <input type="submit" value="Ajouter un compétiteur">
+            </div>
+
+        </form>
+
+    </div>
 
     <h2>Ajouter un nouvel évaluateur</h2>
-    <form id="new-evaluator-form" method="POST">
-        <label for="evaluator-name">Nom de l'évaluateur:</label><br>
-        <input type="text" id="evaluator-name" name="evaluator-name" required><br>
-        <input type="submit" value="Ajouter un évaluateur">
-    </form>
 
-    <h2>Assigner un jury à chaque dessin</h2>
-    <form id="assign-jury-form" method="POST">
-        <label for="drawing-id">ID du dessin:</label><br>
-        <input type="text" id="drawing-id" name="drawing-id" required><br>
-        <label for="jury-id">ID du jury:</label><br>
-        <input type="text" id="jury-id" name="jury-id" required><br>
-        <input type="submit" value="Assigner un jury">
-    </form>
+    <div class="new-evaluator">
+        <form class="menu-evaluator" method="POST">
+
+            <div>
+                <label for="evaluator-name">Nom de l'évaluateur:</label><br>
+                <input type="text" id="evaluator-name" name="evaluator-name" required><br>
+            </div>
+
+            <div>
+                <label for="evaluator-prenom">Prénom de l'évaluateur:</label><br>
+                <input type="text" id="evaluator-prenom" name="evaluator-prenom" required><br>
+            </div>
+
+            <div>
+                <input type="submit" value="Ajouter un évaluateur">
+            </div>
+
+        </form>
+
+    </div>
+
+    <h2>Assigner un jury à un dessin</h2>
+
+    <div class="assign-jury">
+        <form class="menu-jury" method="POST">
+
+            <div>
+                <label for="jury-id">ID du jury:</label><br>
+                <input type="text" id="jury-id" name="jury-id" required><br>
+            </div>
+
+            <div>
+                <label for="drawing-id">ID du dessin:</label><br>
+                <input type="text" id="drawing-id" name="drawing-id" required><br>
+            </div>
+
+            <div>
+                <input type="submit" value="Assigner un jury">
+            </div>
+
+        </form>
+
+    </div>
 </div>
 
 <custom-footer></custom-footer>
