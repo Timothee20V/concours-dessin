@@ -98,6 +98,19 @@ CREATE TABLE President
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours)
 );
 
+-- Table Jury
+CREATE TABLE Jury
+(
+    numJury        INT auto_increment,
+    numConcours   INT,
+    numEvaluateur1 INT,
+    numEvaluateur2 INT,
+    PRIMARY KEY (numJury, numConcours, numEvaluateur1, numEvaluateur2),
+    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
+    FOREIGN KEY (numEvaluateur1) REFERENCES Evaluateur (numEvaluateur),
+    FOREIGN KEY (numEvaluateur2) REFERENCES Evaluateur (numEvaluateur)
+);
+
 -- Table Dessin
 CREATE TABLE Dessin
 (
@@ -122,18 +135,6 @@ CREATE TABLE ParticipationCompetiteur
     PRIMARY KEY (numConcours, numCompetiteur),
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
     FOREIGN KEY (numCompetiteur) REFERENCES Competiteur (numCompetiteur)
-);
-
--- Table Jury
-CREATE TABLE Jury
-(
-    numConcours   INT,
-    numEvaluateur1 INT,
-    numEvaluateur2 INT,
-    PRIMARY KEY (numConcours, numEvaluateur1, numEvaluateur2),
-    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
-    FOREIGN KEY (numEvaluateur1) REFERENCES Evaluateur (numEvaluateur),
-    FOREIGN KEY (numEvaluateur2) REFERENCES Evaluateur (numEvaluateur)
 );
 
 -- Table ParticipationClub
