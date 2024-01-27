@@ -21,14 +21,12 @@ CREATE TABLE Club
 (
     numClub         INT PRIMARY KEY,
     nomClub         VARCHAR(255),
-    numDirecteur    INT,
     adresseClub     VARCHAR(255),
     numTelephone    VARCHAR(20),
     nombreAdherents INT,
     ville           VARCHAR(100),
     departement     VARCHAR(100),
-    region          VARCHAR(100),
-    FOREIGN KEY (numDirecteur) REFERENCES Directeur (numDirecteur)
+    region          VARCHAR(100)
 );
 
 -- Table Concours
@@ -52,6 +50,7 @@ CREATE TABLE Utilisateur
     motDePasse         VARCHAR(50),
     dateAdhesion       DATE,
     numClub            INT,
+    dateNaissance      DATE,
     FOREIGN KEY (numClub) REFERENCES Club (numClub)
 );
 
@@ -64,8 +63,6 @@ CREATE TABLE Directeur
     FOREIGN KEY (numClub) REFERENCES Club (numClub),
     FOREIGN KEY (numDirecteur) REFERENCES Utilisateur (numUtilisateur)
 );
-
-ALTER TABLE Club ADD FOREIGN KEY (numDirecteur) REFERENCES Directeur (numDirecteur);
 
 -- Table Administrateur
 CREATE TABLE Administrateur
@@ -111,8 +108,10 @@ CREATE TABLE Dessin
     leDessin       VARCHAR(100),
     numCompetiteur INT,
     numConcours    INT,
+    numJury        INT,
     FOREIGN KEY (numCompetiteur) REFERENCES Competiteur (numCompetiteur),
-    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours)
+    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
+    FOREIGN KEY (numJury) REFERENCES Jury (numJury)
 );
 
 -- Table ParticipationCompetiteur
@@ -129,10 +128,12 @@ CREATE TABLE ParticipationCompetiteur
 CREATE TABLE Jury
 (
     numConcours   INT,
-    numEvaluateur INT,
-    PRIMARY KEY (numConcours, numEvaluateur),
+    numEvaluateur1 INT,
+    numEvaluateur2 INT,
+    PRIMARY KEY (numConcours, numEvaluateur1, numEvaluateur2),
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
-    FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur (numEvaluateur)
+    FOREIGN KEY (numEvaluateur1) REFERENCES Evaluateur (numEvaluateur),
+    FOREIGN KEY (numEvaluateur2) REFERENCES Evaluateur (numEvaluateur)
 );
 
 -- Table ParticipationClub
@@ -157,5 +158,3 @@ CREATE TABLE Evaluation
     FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur (numEvaluateur),
     FOREIGN KEY (numDessin) REFERENCES Dessin (numDessin)
 );
-
-ALTER TABLE Club ADD FOREIGN KEY (numPresident) REFERENCES President (numPresident);
