@@ -4,9 +4,9 @@ USE `Concours`;
 
 DROP TABLE IF EXISTS `Evaluation`;
 DROP TABLE IF EXISTS `ParticipationClub`;
-DROP TABLE IF EXISTS `Jury`;
 DROP TABLE IF EXISTS `ParticipationCompetiteur`;
 DROP TABLE IF EXISTS `Dessin`;
+DROP TABLE IF EXISTS `Jury`;
 DROP TABLE IF EXISTS `President`;
 DROP TABLE IF EXISTS `Competiteur`;
 DROP TABLE IF EXISTS `Evaluateur`;
