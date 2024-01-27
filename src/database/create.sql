@@ -19,7 +19,7 @@ DROP TABLE IF EXISTS `Club`;
 -- Table Club
 CREATE TABLE Club
 (
-    numClub         INT PRIMARY KEY,
+    numClub         INT PRIMARY KEY AUTO_INCREMENT,
     nomClub         VARCHAR(255),
     adresseClub     VARCHAR(255),
     numTelephone    VARCHAR(20),
@@ -32,7 +32,7 @@ CREATE TABLE Club
 -- Table Concours
 CREATE TABLE Concours
 (
-    numConcours INT PRIMARY KEY,
+    numConcours INT PRIMARY KEY AUTO_INCREMENT,
     theme       VARCHAR(255),
     dateDebut   DATE,
     dateFin     DATE,
@@ -42,7 +42,7 @@ CREATE TABLE Concours
 -- Table Utilisateur
 CREATE TABLE Utilisateur
 (
-    numUtilisateur     INT PRIMARY KEY,
+    numUtilisateur     INT PRIMARY KEY AUTO_INCREMENT,
     nom                VARCHAR(100),
     prenom             VARCHAR(100),
     adresseUtilisateur VARCHAR(255),
@@ -101,7 +101,7 @@ CREATE TABLE President
 -- Table Jury
 CREATE TABLE Jury
 (
-    numJury        INT auto_increment,
+    numJury        INT AUTO_INCREMENT,
     numConcours   INT,
     numEvaluateur1 INT,
     numEvaluateur2 INT,
@@ -114,7 +114,7 @@ CREATE TABLE Jury
 -- Table Dessin
 CREATE TABLE Dessin
 (
-    numDessin      INT PRIMARY KEY,
+    numDessin      INT PRIMARY KEY AUTO_INCREMENT,
     commentaire    VARCHAR(255),
     classement     INT,
     dateRemise     DATE,
@@ -150,7 +150,7 @@ CREATE TABLE ParticipationClub
 -- Table Evaluation
 CREATE TABLE Evaluation
 (
-    numEvaluation  INT PRIMARY KEY,
+    numEvaluation  INT PRIMARY KEY AUTO_INCREMENT,
     dateEvaluation DATE,
     note           DECIMAL(5, 2),
     commentaire    VARCHAR(255),
