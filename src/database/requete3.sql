@@ -1,23 +1,31 @@
--- Requête en français
---SELECT d.numDessin, YEAR(e.dateEvaluation) AS Annee,
---    co.description, u.nom AS NomCompetiteur, d.commentaire AS CommentaireDessin,
---    e.note, e.commentaire AS CommentaireEvaluation, u_2.nom AS NomEvaluateur
---FROM Dessin d
---    JOIN Evaluation e ON d.numDessin = e.numDessin
---    JOIN Concours co ON d.numConcours = co.numConcours
---    JOIN Competiteur com ON d.numCompetiteur = com.numCompetiteur
---    JOIN Utilisateur u ON com.numUtilisateur = u.numUtilisateur
---    JOIN Evaluateur ev ON e.numEvaluateur = ev.numEvaluateur
---    JOIN Utilisateur u_2 ON ev.numUtilisateur = u_2.numUtilisateur;
+-- Requête 3 en Français
+
+-- Pour cette requête on vous demande d’afficher des informations sur tous les dessins qui ont été évalués et qui sont stockés dans la base.
+-- Voici les informations qu’on souhaite voir affichés :
+-- le numéro, l’année, la description du concours dans lequel le dessin a été évalué ;
+-- le nom du compétiteur ayant proposé le dessin ; le numéro et le commentaire du dessin fait par le compétiteur ;
+-- la note et le commentaire de l’évaluation ; le nom de l’évaluateur.
 
 -- Requête SQL
-SELECT Dessin.numDessin, YEAR(Evaluation.dateEvaluation) AS Annee,
-    Concours.description, Utilisateur.nom AS NomCompetiteur, Dessin.commentaire AS CommentaireDessin,
-    Evaluation.note, Evaluation.commentaire AS CommentaireEvaluation, Utilisateur_1.nom AS NomEvaluateur
-FROM Dessin
-    JOIN Evaluation ON Dessin.numDessin = Evaluation.numDessin
-    JOIN Concours ON Dessin.numConcours = Concours.numConcours
-    JOIN Competiteur ON Dessin.numCompetiteur = Competiteur.numCompetiteur
-    JOIN Utilisateur ON Competiteur.numUtilisateur = Utilisateur.numUtilisateur
-    JOIN Evaluateur ON Evaluation.numEvaluateur = Evaluateur.numEvaluateur
-    JOIN Utilisateur AS Utilisateur_1 ON Evaluateur.numUtilisateur = Utilisateur_1.numUtilisateur;
+SELECT
+    Concours.numConcours,
+    YEAR(Concours.dateDebut) AS AnneeConcours,
+    Concours.theme AS DescriptionConcours,
+    UtilisateurCompetiteur.nom AS NomCompetiteur,
+    UtilisateurCompetiteur.numUtilisateur AS NumeroCompetiteur,
+    Dessin.commentaire AS CommentaireCompetiteur,
+    Evaluation.note,
+    Evaluation.commentaire AS CommentaireEvaluation,
+    UtilisateurEvaluateur.nom AS NomEvaluateur
+FROM
+    Dessin
+    JOIN
+    Evaluation ON Dessin.numDessin = Evaluation.numDessin
+    JOIN
+    Utilisateur UtilisateurCompetiteur ON Dessin.numCompetiteur = UtilisateurCompetiteur.numUtilisateur
+    JOIN
+    Concours ON Dessin.numConcours = Concours.numConcours
+    JOIN
+    Evaluateur ON Evaluation.numEvaluateur = Evaluateur.numEvaluateur
+    JOIN
+    Utilisateur UtilisateurEvaluateur ON Evaluateur.numEvaluateur = UtilisateurEvaluateur.numUtilisateur;

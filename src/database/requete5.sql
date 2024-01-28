@@ -1,21 +1,24 @@
--- Requête en français
---SELECT region, AVG(note) AS moyenne_notes
---FROM (
---         SELECT c.region, e.note
---         FROM Evaluation e
---                  JOIN Dessin d ON e.numDessin = d.numDessin
---                  JOIN Concours co ON d.numConcours = co.numConcours
---                  JOIN Club c ON co.numClub = c.numClub
---     ) AS sub
---GROUP BY region
---ORDER BY moyenne_notes DESC
---    LIMIT 1;
+-- Requête 5 en français
+
+-- Nom de la région qui a la meilleure moyenne des notes des dessins proposés.
+-- Afficher le nom de la région et la moyenne des notes de cette région.
 
 -- Requête SQL
-SELECT region, AVG(note) AS moyenne_notes
-FROM (
-         SELECT Club.region, Evaluation.note
-         FROM Evaluation
-                  JOIN Dessin ON Evaluation.numDessin = Dessin.numDessin
-                  JOIN Concours ON Dessin.numConcours = Concours.numConcours
-                  JOIN Club ON Concours.numClub = Club.numClub
+SELECT
+    Club.region AS NomRegion,
+    AVG(Evaluation.note) AS MoyenneNotes
+FROM
+    Evaluation
+        JOIN
+    Dessin ON Evaluation.numDessin = Dessin.numDessin
+        JOIN
+    Competiteur ON Dessin.numCompetiteur = Competiteur.numCompetiteur
+        JOIN
+    Utilisateur ON Competiteur.numCompetiteur = Utilisateur.numUtilisateur
+        JOIN
+    Club ON Utilisateur.numClub = Club.numClub
+GROUP BY
+    Club.region
+ORDER BY
+    MoyenneNotes DESC
+    LIMIT 1;
