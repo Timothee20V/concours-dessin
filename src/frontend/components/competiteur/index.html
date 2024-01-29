@@ -2,72 +2,76 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil</title>
+    <title>Artapol</title>
+    <link rel="icon" href="../../assets/icon.png">
+    <link rel="stylesheet" href="../../style/global.css">
     <link rel="stylesheet" href="competition.css">
     <script src="auth.js"></script>
     <script src="../navbar/customNavbar.js" type="text/javascript" defer></script>
     <script src="../footer/customFooter.js" type="text/javascript" defer></script>
-    <script src="../resultConcours/customResultConcours.js" type="text/javascript" defer></script>
+    <script src="../resultConcours/customResultsConcours.js" type="text/javascript" defer></script>
+    <script src="../resultConcours/dataResultsConcours.js" type="module"></script>
 </head>
 <body>
 
 <custom-navbar></custom-navbar>
 
 <div class="container">
+
     <header>
         <h1>Page Compétiteur</h1>
     </header>
-    <main>
+
+    <div class="border">
         <h2>Inscription à un concours</h2>
-        <form class="contest-registration-form" method="POST">
+        <form class="concours-registration-form" method="POST">
             <div>
-                <label for="contest-name">Nom du concours:</label><br>
-                <input type="text" id="contest-name" name="contest-name" required><br>
+                <label for="concours-id">Nom du concours:</label><br>
+                <input type="text" id="concours-id" name="concours-id" required><br>
             </div>
             <div>
                 <input type="submit" value="S'inscrire au concours">
             </div>
         </form>
+    </div>
 
+    <div class="border">
         <h2>Dépot dessins</h2>
         <form class="drawing-submission-form" method="POST">
             <div>
-                <label for="drawing-name">Nom du dessin:</label><br>
-                <input type="text" id="drawing-name" name="drawing-name" required><br>
+                <label for="drawing-concours-id">ID du concours:</label><br>
+                <input type="text" id="drawing-concours-id" name="drawing-concours-id" required><br>
+            </div>
+            <div>
+                <label for="drawing-comment">Commentaire du dessin:</label><br>
+                <input type="text" id="drawing-comment" name="drawing-comment" required><br>
             </div>
             <div>
                 <label for="drawing-file">Fichier du dessin:</label><br>
-                <input type="file" id="drawing-file" name="drawing-file" required><br>
+                <input type="text" id="drawing-file" name="drawing-file" required><br>
             </div>
+
             <div>
                 <input type="submit" value="Soumettre le dessin">
             </div>
         </form>
+    </div>
 
+    <div class="border">
         <h2>Affichage notes des dessins</h2>
 
-        <table class="result-table">
+        <table class="result-table"></table>
 
-            <tr class="title">
-                <th>Dessin</th>
-                <th>Nom Dessin</th>
-                <th>Score</th>
-            </tr>
+    </div>
 
-            <div class="result">
-
-            </div>
-        </table>
-
-        </table>
-        <h2>Résultats du concours</h2>
+    <div class="border">
+        <h2>Résultat du concours</h2>
 
         <custom-result-concours></custom-result-concours>
-
-    </main>
+    </div>
 </div>
 
 <custom-footer></custom-footer>
-
+<script type="module" src="competiteur.js"></script>
 </body>
 </html>

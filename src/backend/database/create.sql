@@ -4,9 +4,9 @@ USE `Concours`;
 
 DROP TABLE IF EXISTS `Evaluation`;
 DROP TABLE IF EXISTS `ParticipationClub`;
-DROP TABLE IF EXISTS `Jury`;
 DROP TABLE IF EXISTS `ParticipationCompetiteur`;
 DROP TABLE IF EXISTS `Dessin`;
+DROP TABLE IF EXISTS `Jury`;
 DROP TABLE IF EXISTS `President`;
 DROP TABLE IF EXISTS `Competiteur`;
 DROP TABLE IF EXISTS `Evaluateur`;
@@ -19,9 +19,8 @@ DROP TABLE IF EXISTS `Club`;
 -- Table Club
 CREATE TABLE Club
 (
-    numClub         INT PRIMARY KEY auto_increment,
+    numClub         INT PRIMARY KEY AUTO_INCREMENT,
     nomClub         VARCHAR(255),
-    numPresident    INT,
     adresseClub     VARCHAR(255),
     numTelephone    VARCHAR(20),
     nombreAdherents INT,
@@ -33,7 +32,7 @@ CREATE TABLE Club
 -- Table Concours
 CREATE TABLE Concours
 (
-    numConcours INT PRIMARY KEY auto_increment,
+    numConcours INT PRIMARY KEY AUTO_INCREMENT,
     theme       VARCHAR(255),
     dateDebut   DATE,
     dateFin     DATE,
@@ -43,7 +42,7 @@ CREATE TABLE Concours
 -- Table Utilisateur
 CREATE TABLE Utilisateur
 (
-    numUtilisateur     INT PRIMARY KEY auto_increment,
+    numUtilisateur     INT PRIMARY KEY AUTO_INCREMENT,
     nom                VARCHAR(100),
     prenom             VARCHAR(100),
     adresseUtilisateur VARCHAR(255),
@@ -51,6 +50,7 @@ CREATE TABLE Utilisateur
     motDePasse         VARCHAR(50),
     dateAdhesion       DATE,
     numClub            INT,
+    dateNaissance      DATE,
     FOREIGN KEY (numClub) REFERENCES Club (numClub)
 );
 
@@ -98,20 +98,33 @@ CREATE TABLE President
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours)
 );
 
-ALTER TABLE Club ADD FOREIGN KEY (numPresident) REFERENCES President (numPresident);
+-- Table Jury
+CREATE TABLE Jury
+(
+    numJury        INT AUTO_INCREMENT,
+    numConcours   INT,
+    numEvaluateur1 INT,
+    numEvaluateur2 INT,
+    PRIMARY KEY (numJury, numConcours, numEvaluateur1, numEvaluateur2),
+    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
+    FOREIGN KEY (numEvaluateur1) REFERENCES Evaluateur (numEvaluateur),
+    FOREIGN KEY (numEvaluateur2) REFERENCES Evaluateur (numEvaluateur)
+);
 
 -- Table Dessin
 CREATE TABLE Dessin
 (
-    numDessin      INT PRIMARY KEY auto_increment,
+    numDessin      INT PRIMARY KEY AUTO_INCREMENT,
     commentaire    VARCHAR(255),
     classement     INT,
     dateRemise     DATE,
     leDessin       VARCHAR(100),
     numCompetiteur INT,
     numConcours    INT,
+    numJury        INT,
     FOREIGN KEY (numCompetiteur) REFERENCES Competiteur (numCompetiteur),
-    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours)
+    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
+    FOREIGN KEY (numJury) REFERENCES Jury (numJury)
 );
 
 -- Table ParticipationCompetiteur
@@ -122,16 +135,6 @@ CREATE TABLE ParticipationCompetiteur
     PRIMARY KEY (numConcours, numCompetiteur),
     FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
     FOREIGN KEY (numCompetiteur) REFERENCES Competiteur (numCompetiteur)
-);
-
--- Table Jury
-CREATE TABLE Jury
-(
-    numConcours   INT,
-    numEvaluateur INT,
-    PRIMARY KEY (numConcours, numEvaluateur),
-    FOREIGN KEY (numConcours) REFERENCES Concours (numConcours),
-    FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur (numEvaluateur)
 );
 
 -- Table ParticipationClub
@@ -147,7 +150,7 @@ CREATE TABLE ParticipationClub
 -- Table Evaluation
 CREATE TABLE Evaluation
 (
-    numEvaluation  INT PRIMARY KEY auto_increment,
+    numEvaluation  INT PRIMARY KEY AUTO_INCREMENT,
     dateEvaluation DATE,
     note           DECIMAL(5, 2),
     commentaire    VARCHAR(255),
@@ -156,5 +159,3 @@ CREATE TABLE Evaluation
     FOREIGN KEY (numEvaluateur) REFERENCES Evaluateur (numEvaluateur),
     FOREIGN KEY (numDessin) REFERENCES Dessin (numDessin)
 );
-
-ALTER TABLE Club ADD FOREIGN KEY (numPresident) REFERENCES President (numPresident);

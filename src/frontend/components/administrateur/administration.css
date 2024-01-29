@@ -1,26 +1,11 @@
 body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-.container {
-    width: 80vw;
-    margin: 0 auto auto;
-}
-header {
-    background: #f0f0f0;
-    padding: 20px;
-    text-align: center;
+    background: rgb(101,168,236);
+    background: linear-gradient(163deg, rgba(101,168,236,1) 26%, rgba(121,9,101,1) 97%);
 }
 
 .new-concours {
-    width: 40%;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
+    width: auto;
+    padding: 5px 10px;
 }
 
 .menu-concours {
@@ -31,11 +16,7 @@ header {
 }
 
 .new-competitor {
-    width: 37%;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
+    width: auto;
 }
 
 .menu-competitor {
@@ -43,14 +24,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px 10px;
 }
 
 .new-evaluator {
-    width: 37%;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
+    width: auto;
+    padding: 5px 10px;
 }
 
 .menu-evaluator {
@@ -60,12 +39,21 @@ header {
     align-items: center;
 }
 
+.create-jury {
+    width: auto;
+    padding: 5px 10px;
+}
+
+.menu-create-jury {
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .assign-jury {
-    width: 34%;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
+    width: auto;
+    padding: 5px 10px;
 }
 
 .menu-jury {

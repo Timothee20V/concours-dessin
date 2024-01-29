@@ -2,58 +2,60 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Accueil</title>
+    <title>Artapol</title>
+    <link rel="icon" href="../../assets/icon.png">
+    <link rel="stylesheet" href="../../style/global.css">
     <link rel="stylesheet" href="evaluation.css">
     <script src="auth.js"></script>
     <script src="../navbar/customNavbar.js" type="text/javascript" defer></script>
     <script src="../footer/customFooter.js" type="text/javascript" defer></script>
-    <script src="../resultConcours/customResultConcours.js" type="text/javascript" defer></script>
+    <script src="../resultConcours/customResultsConcours.js" type="text/javascript" defer></script>
+    <script src="../resultConcours/dataResultsConcours.js" type="module"></script>
 </head>
 <body>
 
 <custom-navbar></custom-navbar>
 
 <div class="container">
+
     <header>
         <h1>Evaluation</h1>
     </header>
-    <main>
-        <h2>Dessins attribués pour évaluation</h2>
-        <table id="assigned-drawings-table">
-            <div class="assign-drawing">
-                <div>
-                    <div>
-                        Nom du dessin
-                    </div>
-                    <div class="img-drawing">
-                        <iframe width="420" height="315"
-                                src="https://www.youtube.com/embed/QvWuQU1tjDc?autoplay=1&mute=0">
-                        </iframe>
-                    </div>
-                </div>
 
-                <div>
-                    <form class="menu-drawing" method="POST">
-
-                        <div>
-                            <input type="number" id="rating" name="rating" min="0" max="20" required>
-                            <input type="hidden" id="drawing-id" name="drawing-id" value="id_du_dessin">
-                            <input type="submit" value="Noter">
-                        </div>
-
-                    </form>
-                </div>
+    <div class="border">
+        <h2>Noter un dessin</h2>
+        <form class="notation-dessin-form" method="POST">
+            <div>
+                <label for="dessin-id">ID du dessin:</label><br>
+                <input type="text" id="dessin-id" name="dessin-id" required><br>
             </div>
-        </table>
+            <div>
+                <label for="dessin-commentaire">Commentaire :</label><br>
+                <input type="text" id="dessin-commentaire" name="dessin-commentaire" required><br>
+            </div>
+            <div>
+                <label for="dessin-note">Note :</label><br>
+                <input type="number" min="0" max="100" id="dessin-note" name="dessin-note" required><br>
+            </div>
+            <div>
+                <input type="submit" value="Publier la note">
+            </div>
+        </form>
 
+        <h2>Dessins attribués pour évaluation</h2>
+
+        <table class="dessins-evaluation"></table>
+    </div>
+
+    <div class="border">
         <h2>Résultats du concours</h2>
 
         <custom-result-concours></custom-result-concours>
+    </div>
 
-    </main>
 </div>
 
 <custom-footer></custom-footer>
-
+<script type="module" src="evaluateur.js" defer></script>
 </body>
 </html>
