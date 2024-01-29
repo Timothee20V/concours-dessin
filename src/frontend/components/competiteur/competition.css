@@ -1,49 +1,26 @@
 body {
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-.container {
-    width: 80vw;
-    margin: 0 auto auto;
-}
-header {
-    background: #f0f0f0;
-    padding: 20px;
-    text-align: center;
+    background: rgb(224,1,255);
+    background: linear-gradient(163deg, rgba(224,1,255,1) 14%, rgba(0,120,240,1) 53%, rgba(255,0,0,1) 93%);
 }
 
-
-.contest-registration-form {
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
-    width: 25%;
+.concours-registration-form {
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px 10px;
 }
 
 .drawing-submission-form {
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
-    width: 50%;
+    width: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px 10px;
 }
 
 .assign-drawing {
     width: 34%;
-    border: 1px solid #f0f0f0;
-    border-radius: 5px;
-    background: #f0f0f0;
-    box-shadow: 0 0 10px #f0f0f0;
 }
 
 .img-drawing {
@@ -66,19 +43,10 @@ header {
 }
 
 .title {
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ddd;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     display: table-row;
 }
 
 .result {
     padding: 0.75rem;
     vertical-align: top;
-    border-top: 1px solid #dee2e6;
-    background-color: #fffff;
-}
-
-table tr:nth-child(even) {
-    background-color: lightgray;
 }
