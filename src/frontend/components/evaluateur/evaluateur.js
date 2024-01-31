@@ -74,17 +74,27 @@ const getDessins = () => {
                 titleRow.appendChild(titleCell6);
                 tableBody.appendChild(titleRow);
 
-                response.forEach(item => {
+                if (response.length !== 0) {
+                    response.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        for (const property in item) {
+                            const cell = document.createElement('td');
+                            cell.textContent = item[property];
+                            row.appendChild(cell);
+                        }
+
+                        tableBody.appendChild(row);
+                    });
+                } else {
                     const row = document.createElement('tr');
-
-                    for (const property in item) {
-                        const cell = document.createElement('td');
-                        cell.textContent = item[property];
-                        row.appendChild(cell);
-                    }
-
+                    const cell = document.createElement('td');
+                    cell.textContent = 'Aucun dessin trouvé';
+                    cell.colSpan = 7;
+                    row.appendChild(cell);
                     tableBody.appendChild(row);
-                });
+                }
+
 
             } else {
                 console.error('Une erreur s\'est produite');

@@ -2,3 +2,10 @@ body {
     background: rgb(9,121,116);
     background: linear-gradient(162deg, rgba(9,121,116,1) 22%, rgba(241,255,0,1) 92%);
 }
+.img-drawing {
+    display: block;
+    margin: auto;
+    width: 50%;
+    padding: 15px;
+    border-radius: 5px;
+}

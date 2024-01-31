@@ -2,12 +2,9 @@ import Api from "../../service/api.js";
 
 const getConcours = () => {
     const urlConcours = '/backend/api/get/getResultsConcours.php?numCompetiteur=' + userData.userId;
-    console.log(urlConcours)
     Api.request(urlConcours, 'get')
         .then(response => {
             if (response) {
-
-                console.log(response)
 
                 const tableBody = document.querySelector('.result-table-concours');
 
@@ -35,17 +32,26 @@ const getConcours = () => {
 
                 tableBody.appendChild(titleRow);
 
-                response.forEach(item => {
+                if (response.length !== 0) {
+                    response.forEach(item => {
+                        const row = document.createElement('tr');
+
+                        for (const property in item) {
+                            const cell = document.createElement('td');
+                            cell.textContent = item[property];
+                            row.appendChild(cell);
+                        }
+
+                        tableBody.appendChild(row);
+                    });
+                } else {
                     const row = document.createElement('tr');
-
-                    for (const property in item) {
-                        const cell = document.createElement('td');
-                        cell.textContent = item[property];
-                        row.appendChild(cell);
-                    }
-
+                    const cell = document.createElement('td');
+                    cell.textContent = 'Aucun concours trouvé';
+                    cell.colSpan = 6;
+                    row.appendChild(cell);
                     tableBody.appendChild(row);
-                });
+                }
 
             } else {
                 console.error('Une erreur s\'est produite');
